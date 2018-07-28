@@ -1,0 +1,11 @@
+<h2 class="page-title">Add a Player</h2>
+
+  <%= form_for @player do |p| %>
+    <%= p.label :name%>
+    <%= p.text_field :name%>
+    <%= p.label :position %>
+    <%= p.select :position, [['Quarterback','Quarterback'],['Halfback','Halfback'],['Fullback','Fullback']] %>
+    <%= p.label :overall %>
+    <%= p.select :overall, (85...100)%>
+    <%= p.submit %>
+  <% end %>

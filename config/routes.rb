@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'player#index'
+  root 'players#index'
+  patch '/delete', to: 'players#delete', as: 'delete'
   resources :players
 end

@@ -1,0 +1,9 @@
+<h1>Player#index</h1>
+<p><%= link_to "Add a Player", new_player_path %></p>
+<% @all_players.each do |player| %>
+	Name: <%= player.name %>
+	Postion: <%= player.position %>
+	Overall: <%= player.overall %>
+	<%= link_to "Edit", edit_player_path(id: player.id)%>
+	<%= button_to "Delete", delete_path(id: player.id), :method => :patch %>
+<% end %>
