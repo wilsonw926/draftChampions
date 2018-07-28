@@ -1,2 +1,7 @@
 <h1>Player#index</h1>
 <p>Find me in app/views/player/index.html.erb</p>
+<% @all_players.each do |player| %>
+	Name: <%= player.name %>
+	Postion: <%= player.position %>
+	Overall: <%= player.overall %>
+<% end %>
