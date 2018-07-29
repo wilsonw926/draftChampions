@@ -7,5 +7,9 @@
     <%= p.select :position, [['C','C'],['CB','CB'],['DE','DE'],['DT','DT'],['FB','FB'],['G','G'],['HB','HB'],['LB','LB'],['MLB','MLB'],['QB','QB'],['S','S'],['T','T'],['TE','TE'],['WR','WR']] %>
     <%= p.label :overall %>
     <%= p.select :overall, (85...100)%>
+    <%= p.label :front_card%>
+    <%= p.file_field :front_card%>
+    <%= p.label :back_card%>
+    <%= p.file_field :back_card%>
     <%= p.submit %>
   <% end %>

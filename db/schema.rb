@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 2018_07_29_044650) do
     t.integer "overall"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "team_id"
-    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
