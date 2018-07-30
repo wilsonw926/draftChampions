@@ -14,25 +14,25 @@ class PlayersController < ApplicationController
 	end
 
 	def create
-	    @player = Player.new(player_params)
-	    if @player.save!
-	      flash['success'] = 'Player has been created succesfully.'
-	      redirect_to root_path
-	    else
-	      flash[:error] = @player.errors.full_messages.to_sentence
-	      redirect_to new_player_path
-	    end
-  	end
+    @player = Player.new(player_params)
+    if @player.save!
+      flash['success'] = 'Player has been created succesfully.'
+      redirect_to root_path
+    else
+      flash[:error] = @player.errors.full_messages.to_sentence
+      redirect_to new_player_path
+    end
+	end
 
-  	def edit
-    	@player = Player.find(params[:id])
-  	end
+	def edit
+  	@player = Player.find(params[:id])
+	end
 
-  	def update
-	    @player = Player.find(params[:id])
-	    @player.update(player_params)
-	    redirect_to root_path
-	  end
+	def update
+    @player = Player.find(params[:id])
+    @player.update(player_params)
+    redirect_to root_path
+  end
 
 	def show
 		@player = Player.find(params[:id])
