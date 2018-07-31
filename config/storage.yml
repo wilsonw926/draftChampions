@@ -7,12 +7,12 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
-amazon:
-  service: S3
-  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
-  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
-  region: us-west-1
-  bucket: draftchampions
+# amazon:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+#   region: us-west-1
+#   bucket: draftchampions
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
@@ -28,7 +28,7 @@ microsoft:
   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
   container: draftchampions
 
-mirror:
-  service: Mirror
-  primary: local
-  mirrors: [ amazon, microsoft ]
+# mirror:
+#   service: Mirror
+#   primary: local
+#   mirrors: [ amazon, google, microsoft ]

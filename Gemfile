@@ -43,7 +43,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #Other
 gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem "azure-storage", require: false
-gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
