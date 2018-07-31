@@ -7,6 +7,9 @@ class TeamsController < ApplicationController
 		@team = Team.new
 	end
 
+	def create 
+	end
+
 	def delete
 		@team = Team.find(params[:id])
 		@team.delete
