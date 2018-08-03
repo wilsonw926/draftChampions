@@ -45,3 +45,17 @@ qb_overalls = [99, 99, 97, 97, 96]
 0.upto(qb_player_names.length-1) do |n|
 	create_players(qb_player_names[n], 'QB', qb_overalls[n])
 end
+
+#RB
+hb_player_names = ['Bo Jackson', 'Chris Johnson', 'Devonta Freeman', 'Lesean Mccoy', 'Leveon Bell']
+hb_overalls = [99, 99, 97, 96, 95]
+0.upto(hb_player_names.length-1) do |n|
+	create_players(hb_player_names[n], 'HB', hb_overalls[n])
+end
+
+#FB
+fb_player_names = ['Christian Okoye', 'Patrick Dimarco', 'Anthony Sherman']
+fb_overalls = [99, 98, 97, 96, 95]
+0.upto(fb_player_names.length-1) do |n|
+	create_players(fb_player_names[n], 'FB', fb_overalls[n])
+end
