@@ -10,16 +10,38 @@ User.create(email: 'admin@gmail.com', password: 'password', password_confirmatio
 User.create(email: 'user@gmail.com', password: 'password', password_confirmation: 'password', admin: false)
 
 #Players
+def create_players(name, position, overall)
+	p = Player.create(name: name, position: position, overall: overall)
+	playerFileName = name.delete(' ')
+	front = 'app/assets/images/' + playerFileName + 'F.png'
+	back = 'app/assets/images/' + playerFileName + 'B.png'
+	p.front_card.attach(io: File.open(front), filename: '#{playerFileName}F.png')
+	p.back_card.attach(io: File.open(back), filename: '#{playerFileName}B.png')
+end
+
+#Golds
+
+#OFFENSE
+offense_player_names = ['Nate Solder', 'Jah Reid', 'Eric Wood', 'Brandon Fusco', 'Michael Schofield', 'Virgil Green', 'Tavon Austin', 'John Brown', 'Mike Tolbert', 'Alex Smith', 'David Johnson', 'Allen Robinson']
+offense_player_positions = ['T', 'G', 'C', 'G', 'T', 'TE', 'WR', 'WR', 'FB', 'QB', 'HB', 'WR']
+offense_player_overalls = [79, 74, 78, 78, 75, 77, 75, 78, 74, 79, 78, 77]
+0.upto(offense_player_names.length-1) do |n|
+	create_players(offense_player_names[n], offense_player_positions[n], offense_player_overalls[n])
+end
+
+#DEFENSE
+defense_player_names = ['Eric Reid', 'Alec Ogletree', 'Brian Cushing', 'Danny Trevathan', 'Akeem Ayers', 'Kenny Vaccaro', 'Janoris Jenkins', 'Stephen Paea', 'Al Woods', 'Chris Baker', 'Frostee Rucker', 'Brandon Boykin']
+defense_player_positions = ['S', 'LB', 'MLB', 'MLB', 'LB', 'S', 'CB', 'DE', 'DT', 'DT', 'DE', 'CB']
+defense_player_overalls = [78, 78, 79, 75, 77, 74, 78, 78, 74, 75, 77, 79]
+0.upto(defense_player_names.length-1) do |n|
+	create_players(defense_player_names[n], defense_player_positions[n], defense_player_overalls[n])
+end
+
+#Elite
 
 #QBs
-p = Player.create(name: 'Michael Vick', position: 'QB', overall: 99)
-p.front_card.attach(io: File.open('app/assets/images/michael_vick_f.png'), filename: 'michael_vick_f.png')
-p.back_card.attach(io: File.open('app/assets/images/michael_vick_b.png'), filename: 'michael_vick_b.png')
-
-p = Player.create(name: 'Aaron Rodgers', position: 'QB', overall: 97)
-p.front_card.attach(io: File.open('app/assets/images/aaron_rodgers_f.png'), filename: 'aaron_rodgers_f.png')
-p.back_card.attach(io: File.open('app/assets/images/aaron_rodgers_b.png'), filename: 'aaron_rodgers_b.png')
-
-p = Player.create(name: 'Tom Brady', position: 'QB', overall: 96)
-p.front_card.attach(io: File.open('app/assets/images/tom_brady_f.png'), filename: 'tom_brady_f.png')
-p.back_card.attach(io: File.open('app/assets/images/tom_brady_b.png'), filename: 'tom_brady_b.png')
+qb_player_names = ['Michael Vick', 'Peyton Manning', 'Aaron Rodgers', 'Tom Brady']
+qb_overalls = [99, 99, 97, 96]
+0.upto(qb_player_names.length-1) do |n|
+	create_players(qb_player_names[n], 'QB', qb_overalls[n])
+end
