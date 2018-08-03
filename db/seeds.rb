@@ -55,7 +55,14 @@ end
 
 #FB
 fb_player_names = ['Christian Okoye', 'Patrick Dimarco', 'Anthony Sherman']
-fb_overalls = [99, 98, 97, 96, 95]
+fb_overalls = [99, 98, 97]
 0.upto(fb_player_names.length-1) do |n|
 	create_players(fb_player_names[n], 'FB', fb_overalls[n])
+end
+
+#WR
+wr_player_names = ['Calvin Johnson', 'Michael Irvin', 'Isaac Bruce', 'Vincent Jackson', 'AJ Green', 'Deandre Hopkins', 'Julio Jones', 'Emmanuel Sanders', 'Larry Fitzgerald']
+wr_overalls = [99, 99, 97, 97, 97, 96, 95, 95, 94]
+0.upto(wr_player_names.length-1) do |n|
+	create_players(wr_player_names[n], 'WR', wr_overalls[n])
 end
