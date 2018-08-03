@@ -40,8 +40,8 @@ end
 #Elite
 
 #QBs
-qb_player_names = ['Michael Vick', 'Peyton Manning', 'Aaron Rodgers', 'Tom Brady']
-qb_overalls = [99, 99, 97, 96]
+qb_player_names = ['Michael Vick', 'Peyton Manning', 'Aaron Rodgers', 'Cam Newton', 'Tom Brady']
+qb_overalls = [99, 99, 97, 97, 96]
 0.upto(qb_player_names.length-1) do |n|
 	create_players(qb_player_names[n], 'QB', qb_overalls[n])
 end
