@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   patch '/delete', to: 'players#delete', as: 'delete'
   resources :players
   resources :teams
+  get '/draft/:round_number', to: 'teams#draft', as: 'draft'
 end

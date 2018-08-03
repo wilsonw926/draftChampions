@@ -3,7 +3,7 @@
 <% @all_teams.each do |team| %>
 	Name: <%= team.name %>
 	<% if team.drafted == false %>
-		<%= link_to 'Draft!', players_path %>
+		<%= link_to 'Draft!', draft_path(id: team.id, round_number: 1) %>
 	<% end %>
 	Players: <%= team.players_array %>
 <% end %>
