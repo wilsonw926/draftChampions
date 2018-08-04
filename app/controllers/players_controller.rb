@@ -7,7 +7,7 @@ class PlayersController < ApplicationController
 		@player = Player.new
 	end
 
-	def delete
+	def destroy
 		@player = Player.find(params[:id])
 		@player.delete
 		redirect_to root_path

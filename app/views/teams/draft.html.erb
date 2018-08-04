@@ -1,4 +1,8 @@
 Round <%= @round %> / 15
-<%= @player_one.name %>
-<%= @player_two.name %>
-<%= @player_three.name %>
+<% @three_players.each do |player| %>
+	Name: <%= player.name %>
+	Postion: <%= player.position %>
+	Overall: <%= player.overall %>
+	<%= image_tag player.front_card.variant(resize: '200x200') %>
+	<%= image_tag player.back_card.variant(resize: '200x200') %>
+<% end %>

@@ -94,3 +94,45 @@ c_overalls = [98, 94, 93]
 0.upto(c_player_names.length-1) do |n|
 	create_players(c_player_names[n], 'C', c_overalls[n])
 end
+
+#S
+s_player_names = ['Charles Woodson', 'Malcolm Jenkins', 'Eric Weddle', 'Earl Thomas', 'Kam Chancellor', 'Ed Reed', 'Eric Berry']
+s_overalls = [99, 98, 96, 94, 99, 98, 94]
+0.upto(s_player_names.length-1) do |n|
+	create_players(s_player_names[n], 'S', s_overalls[n])
+end
+
+#LB
+lb_player_names = ['Von Miller', 'Thomas Davis', 'Anthony Barr', 'Derrick Brooks', 'Terrell Suggs', 'James Harrison', 'Shaq Thompson']
+lb_overalls = [99, 97, 97, 93, 97, 96, 94]
+0.upto(lb_player_names.length-1) do |n|
+	create_players(lb_player_names[n], 'LB', lb_overalls[n])
+end
+
+#MLB
+mlb_player_names = ['Ray Lewis', 'Clay Matthews', 'Mychal Kendricks', 'CJ Mosley', 'Luke Kuechly', 'Navorro Bowman', 'Derrick Johnson']
+mlb_overalls = [98, 97, 97, 96, 95, 95, 94]
+0.upto(mlb_player_names.length-1) do |n|
+	create_players(mlb_player_names[n], 'MLB', mlb_overalls[n])
+end
+
+#CB
+cb_player_names = ['Deion Sanders', 'Richard Sherman', 'Patrick Peterson', 'Night Train Lane', 'Ty Law', 'Josh Norman', 'Joe Haden', 'Ronde Barber', 'Aqib Talib']
+cb_overalls = [99, 98, 98, 97, 97, 96, 94, 94, 93]
+0.upto(cb_player_names.length-1) do |n|
+	create_players(cb_player_names[n], 'CB', cb_overalls[n])
+end
+
+#DE
+de_player_names = ['Jason Taylor', 'Reggie White', 'Calais Campbell', 'JJ Watt', 'Jadeveon Clowney', 'Bruce Smith', 'Khalil Mack', 'Ezekiel Ansah']
+de_overalls = [99, 98, 96, 94, 99, 98, 97, 95]
+0.upto(de_player_names.length-1) do |n|
+	create_players(de_player_names[n], 'DE', de_overalls[n])
+end
+
+#DT
+dt_player_names = ['Mean Joe Greene', 'Dontari Poe', 'Geno Atkins', 'Ndamukong Suh', 'Aaron Donald', 'Marcell Dareus']
+dt_overalls = [99, 97, 96, 96, 94, 96]
+0.upto(dt_player_names.length-1) do |n|
+	create_players(dt_player_names[n], 'DT', dt_overalls[n])
+end

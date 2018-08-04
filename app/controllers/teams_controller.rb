@@ -24,9 +24,10 @@ class TeamsController < ApplicationController
 		@team = Team.find(params[:id])
 		@round = params[:round_number]
 		@player_one, @player_two, @player_three = render_three_players(positions)
-		@team.seen_players_array.push(@player_one.id)
-		@team.seen_players_array.push(@player_two.id)
-		@team.seen_players_array.push(@player_three.id)
+		@three_players = [@player_one, @player_two, @player_three]
+		for p in @three_players
+			@team.seen_players_array.push(p.id)
+		end
 		@team.save
 	end
 
@@ -45,7 +46,7 @@ class TeamsController < ApplicationController
 		return player_one, player_two, player_three
 	end
 
-	def delete
+	def destroy
 		@team = Team.find(params[:id])
 		@team.delete
 		redirect_to root_path

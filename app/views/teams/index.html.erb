@@ -7,4 +7,5 @@
 	<% end %>
 	Players: <%= team.players_array %>
 	Seen Players: <%= team.seen_players_array %>
+	<%= button_to "Delete", team_path(id: team.id), :method => :delete %>
 <% end %>
