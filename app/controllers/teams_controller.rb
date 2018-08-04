@@ -10,9 +10,11 @@ class TeamsController < ApplicationController
 	def new
 		t = Team.new(name: 'New Team ' + (Time.now).to_s, user_id: current_user.id)
 		t.players_array = []
+		t.seen_players_array = []
 		gold_players = Player.where("overall < 85")
 		for gp in gold_players
 			t.players_array.push(gp.id)
+			t.seen_players_array.push(gp.id)
 		end
 		t.save
 	end
@@ -22,10 +24,14 @@ class TeamsController < ApplicationController
 		@team = Team.find(params[:id])
 		@round = params[:round_number]
 		@player_one, @player_two, @player_three = render_three_players(positions)
+		@team.seen_players_array.push(@player_one.id)
+		@team.seen_players_array.push(@player_two.id)
+		@team.seen_players_array.push(@player_three.id)
+		@team.save
 	end
 
 	def render_three_players(positions)
-		seen = @team.players_array
+		seen = @team.seen_players_array
 		player_one_arr = Player.where("position = ? AND overall > ?", positions[rand(positions.length)], 85)
 		player_one = player_one_arr[rand(player_one_arr.length)]
 		player_two_arr = Player.where("position = ? AND overall > ?", positions[rand(positions.length)], 85)

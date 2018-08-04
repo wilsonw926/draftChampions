@@ -61,8 +61,36 @@ fb_overalls = [99, 98, 97]
 end
 
 #WR
-wr_player_names = ['Calvin Johnson', 'Michael Irvin', 'Isaac Bruce', 'Vincent Jackson', 'AJ Green', 'Deandre Hopkins', 'Julio Jones', 'Emmanuel Sanders', 'Larry Fitzgerald']
-wr_overalls = [99, 99, 97, 97, 97, 96, 95, 95, 94]
+wr_player_names = ['Calvin Johnson', 'Michael Irvin', 'Isaac Bruce', 'Vincent Jackson', 'AJ Green', 'Deandre Hopkins', 'Julio Jones', 'Emmanuel Sanders', 'Larry Fitzgerald', 'Mike Evans']
+wr_overalls = [99, 99, 97, 97, 97, 96, 95, 95, 94, 94]
 0.upto(wr_player_names.length-1) do |n|
 	create_players(wr_player_names[n], 'WR', wr_overalls[n])
+end
+
+#TE
+te_player_names = ['Delanie Walker', 'Tony Gonzalez', 'Jimmy Graham']
+te_overalls = [98, 97, 96]
+0.upto(te_player_names.length-1) do |n|
+	create_players(te_player_names[n], 'TE', te_overalls[n])
+end
+
+#T
+t_player_names = ['Trent Williams', 'Anthony Munoz', 'Jason Peters', 'Joe Thomas', 'Mitchell Schwartz', 'Sebastian Vollmer', 'Jonathan Ogden']
+t_overalls = [99, 97, 95, 95, 98, 95, 93]
+0.upto(t_player_names.length-1) do |n|
+	create_players(t_player_names[n], 'T', t_overalls[n])
+end
+
+#G
+g_player_names = ['Steve Hutchinson', 'Josh Sitton', 'Mike Iupati', 'Kelechi Osemele', 'Richie Incognito', 'Marshal Yanda', 'Kyle Long', 'TJ Lang']
+g_overalls = [99, 94, 94, 93, 98, 96, 96, 95]
+0.upto(g_player_names.length-1) do |n|
+	create_players(g_player_names[n], 'G', g_overalls[n])
+end
+
+#C
+c_player_names = ['Jeff Saturday', 'Ryan Kalil', 'Travis Frederick']
+c_overalls = [98, 94, 93]
+0.upto(c_player_names.length-1) do |n|
+	create_players(c_player_names[n], 'C', c_overalls[n])
 end
