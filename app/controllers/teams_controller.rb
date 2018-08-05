@@ -5,6 +5,25 @@ class TeamsController < ApplicationController
 			new()
 		end
 		@all_teams = current_user.teams
+		@all_teams.each do |team|
+			if team.started == true and team.drafted == false
+				team.destroy
+			end
+		end
+	end
+
+	def show
+		@team = Team.find(params[:id])
+		@all_players = []
+		0.upto(@team.players_array.length-1) do |n|
+			@all_players.push(Player.find_by(id: @team.players_array[n]))
+		end
+		@all_players = @all_players.sort_by{ |a| a[:overall] }.reverse!
+	end
+
+	def create
+		new()
+		redirect_to teams_path
 	end
 
 	def new
@@ -35,6 +54,9 @@ class TeamsController < ApplicationController
 	def draft
 		positions = ['T', 'G', 'C', 'G', 'T', 'TE', 'WR', 'WR', 'FB', 'QB', 'HB', 'WR', 'S', 'LB', 'MLB', 'MLB', 'LB', 'S', 'CB', 'DE', 'DT', 'DT', 'DE', 'CB']
 		@team = Team.find(params[:id])
+		if @team.started == false
+			@team.started = true
+		end
 		@round = params[:round_number].to_i + 1
 		@player_one, @player_two, @player_three = render_three_players(positions)
 		@three_players = [@player_one, @player_two, @player_three]
@@ -62,10 +84,7 @@ class TeamsController < ApplicationController
 	def destroy
 		@team = Team.find(params[:id])
 		@team.delete
-		redirect_to root_path
+		redirect_to teams_path
 	end
 
-	def show
-		@team = Team.find(params[:id])
-	end
 end

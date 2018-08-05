@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'players#index'
+  devise_for :users do
+	  get '/users/sign_out' => 'devise/sessions#destroy'
+	end
+  root 'players#home'
   # patch '/delete', to: 'teams#delete', as: 'delete'
   resources :players
   resources :teams

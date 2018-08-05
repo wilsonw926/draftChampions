@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_172956) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.boolean "drafted", default: false
+    t.boolean "started", default: false
     t.string "players_array"
     t.string "seen_players_array"
     t.index ["user_id"], name: "index_teams_on_user_id"

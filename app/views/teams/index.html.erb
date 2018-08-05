@@ -1,11 +1,16 @@
 <h1>Teams#index</h1>
 <p>Find me in app/views/teams/index.html.erb</p>
 <% @all_teams.each do |team| %>
-	Name: <%= team.name %>
-	<% if team.drafted == false %>
-		<%= link_to 'Draft!', draft_path(id: team.id, round_number: 0, selected_player: 1) %>
+	<% if team.started == true and team.drafted == false %>
+	<% else %>
+		Name: <%= team.name %>
+		<% if team.drafted == false %>
+			<%= link_to 'Draft!', draft_path(id: team.id, round_number: 0, selected_player: 1) %>
+		<% end %>
+		<%= button_to "View Team", team_path(id: team.id), :method => :get %>
+		<%= button_to "Delete", team_path(id: team.id), :method => :delete %>
+		<br>
 	<% end %>
-	Players: <%= team.players_array %>
-	Seen Players: <%= team.seen_players_array %>
-	<%= button_to "Delete", team_path(id: team.id), :method => :delete %>
 <% end %>
+<br>
+<%= button_to "New Team", teams_path, :method => :post %>
