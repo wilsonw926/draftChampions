@@ -1,8 +1,9 @@
-Round <%= @round %> / 15
+Round <%= @round %> / 15 <br>
 <% @three_players.each do |player| %>
 	Name: <%= player.name %>
 	Postion: <%= player.position %>
 	Overall: <%= player.overall %>
 	<%= image_tag player.front_card.variant(resize: '200x200') %>
-	<%= image_tag player.back_card.variant(resize: '200x200') %>
+	<%= image_tag player.back_card.variant(resize: '200x200') %><br>
+	<%= button_to "Draft Player", add_player_path(id: @team.id, round_number: @round, selected_player: player.id) %>
 <% end %>

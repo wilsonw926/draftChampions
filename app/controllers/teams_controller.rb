@@ -19,10 +19,23 @@ class TeamsController < ApplicationController
 		t.save
 	end
 
+	def add_player
+		@team = Team.find(params[:id])
+		@team.players_array.push(params[:selected_player].to_i)
+		if params[:round_number].to_i == 15
+			@team.drafted = true
+			@team.save
+			redirect_to teams_path
+		else
+			@team.save
+			redirect_to draft_path
+		end
+	end
+
 	def draft
 		positions = ['T', 'G', 'C', 'G', 'T', 'TE', 'WR', 'WR', 'FB', 'QB', 'HB', 'WR', 'S', 'LB', 'MLB', 'MLB', 'LB', 'S', 'CB', 'DE', 'DT', 'DT', 'DE', 'CB']
 		@team = Team.find(params[:id])
-		@round = params[:round_number]
+		@round = params[:round_number].to_i + 1
 		@player_one, @player_two, @player_three = render_three_players(positions)
 		@three_players = [@player_one, @player_two, @player_three]
 		for p in @three_players
