@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_172956) do
+ActiveRecord::Schema.define(version: 2018_08_05_212830) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_172956) do
     t.boolean "started", default: false
     t.string "players_array"
     t.string "seen_players_array"
+    t.integer "overall_sum", default: 1844
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
 

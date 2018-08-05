@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :players
   resources :teams
   get '/draft/:id/:round_number/:selected_player', to: 'teams#draft', as: 'draft'
-  post '/draft/:id/:round_number/:selected_player', to: 'teams#add_player', as: 'add_player'
+  post '/draft/:id/:round_number/:selected_player/:player_overall', to: 'teams#add_player', as: 'add_player'
 end
