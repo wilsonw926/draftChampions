@@ -160,6 +160,7 @@ p {
 
 .slider {
   background: url(stadium.png) no-repeat;
+  background-position: center center;
   background-size: cover;
   min-height: 900px; }
   @media (max-width: 992px) {
@@ -168,6 +169,7 @@ p {
 
 .userslider {
   background: url(userbackground.png) no-repeat;
+  background-position: center center;
   background-size: cover;
   min-height: 900px; }
   @media (max-width: 992px) {
@@ -192,7 +194,9 @@ p {
     color: #000; }
 
 .slider-title_box {
-  text-align: center; }
+  text-align: center;
+  position: fixed;
+  top: 35%; }
 
 .slider-content_wrap h5 {
   color: #909090;
