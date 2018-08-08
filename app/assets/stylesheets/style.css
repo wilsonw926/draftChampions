@@ -159,7 +159,7 @@ p {
 .slider {
   background: url(stadium.png) no-repeat;
   background-size: cover;
-  min-height: 800px; }
+  min-height: 900px; }
   @media (max-width: 992px) {
     .slider {
       min-height: 700px; } }
