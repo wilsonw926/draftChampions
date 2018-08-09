@@ -23,19 +23,20 @@ class TeamsController < ApplicationController
 
 	def create
 		new()
-		redirect_to teams_path
+		redirect_to draft_path
 	end
 
 	def new
-		t = Team.new(name: 'New Team ' + (Time.now).to_s, user_id: current_user.id)
-		t.players_array = []
-		t.seen_players_array = []
+		@team = Team.new(name: 'New Team ' + (Time.now).to_s, user_id: current_user.id)
+		@team.players_array = []
+		@team.seen_players_array = []
 		gold_players = Player.where("overall < 85")
 		for gp in gold_players
-			t.players_array.push(gp.id)
-			t.seen_players_array.push(gp.id)
+			@team.players_array.push(gp.id)
+			@team.seen_players_array.push(gp.id)
 		end
-		t.save
+		@team.save
+		return @team
 	end
 
 	def add_player
@@ -45,7 +46,7 @@ class TeamsController < ApplicationController
 		if params[:round_number].to_i == 15
 			@team.drafted = true
 			@team.save
-			redirect_to teams_path
+			redirect_to @team
 		else
 			@team.save
 			redirect_to draft_path
@@ -54,9 +55,14 @@ class TeamsController < ApplicationController
 
 	def draft
 		positions = ['T', 'G', 'C', 'G', 'T', 'TE', 'WR', 'WR', 'FB', 'QB', 'HB', 'WR', 'S', 'LB', 'MLB', 'MLB', 'LB', 'S', 'CB', 'DE', 'DT', 'DT', 'DE', 'CB']
-		@team = Team.find(params[:id])
-		@team.started = true
 		@round = params[:round_number].to_i + 1
+		if @round == 1
+			Team.delete_all
+			@team = new()
+			@team.started = true
+		else
+			@team = Team.find(params[:id])
+		end
 		@player_one, @player_two, @player_three = render_three_players(positions)
 		@three_players = [@player_one, @player_two, @player_three]
 		for p in @three_players

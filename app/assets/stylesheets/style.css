@@ -73,6 +73,14 @@ p {
   left: 0;
   margin: 0 auto; }
 
+.draft-menu {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto; }
+
 .nav-menu-2 {
   position: inherit; }
 
@@ -167,6 +175,34 @@ p {
     .slider {
       min-height: 700px; } }
 
+.teamarrow {
+  position:absolute;
+  margin-left:47%;
+  margin-top: 300px;
+}
+
+.teamarrowtext {
+  margin-top: -20px;
+  margin-left: -37%;
+}
+
+.round {
+  color: #FFF;
+  margin-top: 110px;
+}
+
+.overall {
+  color: #FFF;
+  margin-top: -40px;
+}
+
+.no-refresh-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .userslider {
   background: url(userbackground.png) no-repeat;
   background-position: center center;
@@ -196,6 +232,10 @@ p {
 .slider-title_box {
   text-align: center;
   position: fixed;
+  top: 35%; }
+
+.three_players {
+  text-align: center;
   top: 35%; }
 
 .slider-content_wrap h5 {
@@ -406,7 +446,8 @@ p {
         margin: 0; }
 
 .bottom-icons {
-  padding: 15px 0 0;
+  background: url("draftbuttonbackground.png") no-repeat;
+  padding: 15px 0 15px;
   line-height: 1; }
   .bottom-icons span {
     float: right;

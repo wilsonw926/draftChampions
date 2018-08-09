@@ -33,7 +33,7 @@
                                 <form class="form-wrap mt-4">
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <% if user_signed_in? %>
-                                            <%= link_to image_tag('draftbutton.png'), teams_path %> 
+                                            <%= link_to image_tag('draftbutton.png'), draft_path(id: 0, round_number: 0, selected_player: 1) %> 
                                         <% else %>
                                             <%= link_to image_tag('draftbutton.png'), new_user_session_path %> 
                                         <% end %>
