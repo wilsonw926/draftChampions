@@ -125,7 +125,11 @@ iframe {
 .wrap-table100 {
   width: 1170px;
 }
-
+.showpage {
+  background: url(userbackground.png) no-repeat;
+  background-position: center center;
+  background-size: cover; 
+}
 table {
   border-spacing: 1;
   border-collapse: collapse;
@@ -135,6 +139,8 @@ table {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  margin-top:  75px;
+  background-color: transparent;
 }
 table * {
   position: relative;
@@ -187,9 +193,6 @@ tbody tr {
 }
 
 tbody tr:hover {
-  color: #555555;
-  background-color: #f5f5f5;
-  cursor: pointer;
 }
 
 .column1 {

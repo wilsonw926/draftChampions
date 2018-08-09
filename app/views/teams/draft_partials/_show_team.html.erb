@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/table.css">
+</head>
+<body>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">LT</th>
+								<th class="column2">LG</th>
+								<th class="column3">C</th>
+								<th class="column4">RG</th>
+								<th class="column5">RT</th>
+								<th class="column6">TE</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="column1">
+										<%= image_tag @all_players.select { |p| p.position == 'T' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column2">
+										<%= image_tag @all_players.select { |p| p.position == 'G' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column3">
+										<%= image_tag @all_players.select { |p| p.position == 'C' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column4">
+										<%= image_tag @all_players.select { |p| p.position == 'G' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column5">
+										<%= image_tag @all_players.select { |p| p.position == 'T' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column6">
+										<%= image_tag @all_players.select { |p| p.position == 'TE' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+								</tr>								
+						</tbody>
+					</table>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">WR1</th>
+								<th class="column2">WR2</th>
+								<th class="column3">FB</th>
+								<th class="column4">QB</th>
+								<th class="column5">HB</th>
+								<th class="column6">WR3</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="column1">
+										<%= image_tag @all_players.select { |p| p.position == 'WR' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column2">
+										<%= image_tag @all_players.select { |p| p.position == 'WR' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column3">
+										<%= image_tag @all_players.select { |p| p.position == 'FB' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column4">
+										<%= image_tag @all_players.select { |p| p.position == 'QB' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column5">
+										<%= image_tag @all_players.select { |p| p.position == 'HB' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column6">
+										<%= image_tag @all_players.select { |p| p.position == 'WR' }[2].front_card.variant(resize: '300x300') %>
+									</td>
+								</tr>								
+						</tbody>
+					</table>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">FS</th>
+								<th class="column2">LB</th>
+								<th class="column3">MLB</th>
+								<th class="column4">MLB</th>
+								<th class="column5">LB</th>
+								<th class="column6">SS</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="column1">
+										<%= image_tag @all_players.select { |p| p.position == 'S' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column2">
+										<%= image_tag @all_players.select { |p| p.position == 'LB' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column3">
+										<%= image_tag @all_players.select { |p| p.position == 'MLB' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column4">
+										<%= image_tag @all_players.select { |p| p.position == 'MLB' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column5">
+										<%= image_tag @all_players.select { |p| p.position == 'LB' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column6">
+										<%= image_tag @all_players.select { |p| p.position == 'S' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+								</tr>								
+						</tbody>
+					</table>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">CB1</th>
+								<th class="column2">LE</th>
+								<th class="column3">DT</th>
+								<th class="column4">DT</th>
+								<th class="column5">RE</th>
+								<th class="column6">CB2</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="column1">
+										<%= image_tag @all_players.select { |p| p.position == 'CB' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column2">
+										<%= image_tag @all_players.select { |p| p.position == 'DE' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column3">
+										<%= image_tag @all_players.select { |p| p.position == 'DT' }[0].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column4">
+										<%= image_tag @all_players.select { |p| p.position == 'DT' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column5">
+										<%= image_tag @all_players.select { |p| p.position == 'DE' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+									<td class="column6">
+										<%= image_tag @all_players.select { |p| p.position == 'CB' }[1].front_card.variant(resize: '300x300') %>
+									</td>
+								</tr>								
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
