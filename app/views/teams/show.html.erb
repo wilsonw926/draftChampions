@@ -1,4 +1,7 @@
 <div class="showpage">
-Team Overall: <%= @team.overall_sum/@team.players_array.length %><br>
-<%= render '/teams/draft_partials/show_team' %>
+	<div class="showpage_overall">
+		<br>
+		Team Overall: <span class="featured-rating-green"><%= @team.overall_sum/@team.players_array.length %></span>
+	</div>	
+	<%= render '/teams/draft_partials/show_team' %>
 </div>

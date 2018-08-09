@@ -382,16 +382,18 @@ p {
 .featured-rating-orange,
 .featured-rating-green {
   position: absolute;
-  right: 10px;
+  /* right: 10px; */
   width: 60px;
   height: 60px;
   text-align: center;
-  margin: -33px 10px 0 0;
+  margin: -7px 0px 0 0;
   font-size: 23px;
   background: #ff7474;
   color: #fff;
   padding: 14px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin-left: 15px;
+  }
 
 .featured-rating-orange {
   background: #ffae00 !important; }
